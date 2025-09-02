@@ -289,13 +289,14 @@ function App() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
-              href="Summaries_Chrome_Bot-main.zip"
+              href="/assets/Summaries_Chrome_Bot-main.zip"
               download
               className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl flex items-center space-x-2 transition-all"
             >
               <Download className="w-4 h-4" />
               <span>Download ZIP</span>
             </a>
+
           </div>
 
           {/* Stats */}
@@ -372,8 +373,8 @@ function App() {
                         key={type.value}
                         onClick={() => setSummaryType(type.value)}
                         className={`p-3 rounded-lg border transition-all text-left ${summaryType === type.value
-                            ? 'bg-blue-500/20 border-blue-400 text-blue-300'
-                            : 'bg-white/5 border-white/20 text-gray-300 hover:bg-white/10'
+                          ? 'bg-blue-500/20 border-blue-400 text-blue-300'
+                          : 'bg-white/5 border-white/20 text-gray-300 hover:bg-white/10'
                           }`}
                       >
                         <div className="font-medium text-sm">{type.label}</div>
@@ -505,13 +506,13 @@ function App() {
               <div
                 key={index}
                 className={`flex items-center space-x-6 bg-white/5 backdrop-blur-sm border rounded-xl p-8 transition-all duration-500 ${currentStep === index
-                    ? 'border-blue-400 bg-blue-500/10 scale-105'
-                    : 'border-white/10 hover:bg-white/10'
+                  ? 'border-blue-400 bg-blue-500/10 scale-105'
+                  : 'border-white/10 hover:bg-white/10'
                   }`}
               >
                 <div className={`p-4 rounded-xl transition-all duration-300 ${currentStep === index
-                    ? 'bg-gradient-to-br from-blue-400 to-purple-500'
-                    : 'bg-gradient-to-br from-blue-500 to-purple-600'
+                  ? 'bg-gradient-to-br from-blue-400 to-purple-500'
+                  : 'bg-gradient-to-br from-blue-500 to-purple-600'
                   }`}>
                   {item.icon}
                 </div>
