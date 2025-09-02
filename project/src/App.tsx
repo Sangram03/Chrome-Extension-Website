@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Chrome, Download, Github, Zap, FileText, Copy, Share2, CheckCircle, ArrowRight, Globe, Sparkles, Bot, BookOpen, Clock, Users, AlertCircle, ExternalLink, Mail, Twitter, } from 'lucide-react';
+import { Chrome, Download, Github, Zap,AudioLines,Wallpaper,Languages,Share,Volume2,ZoomIn,ZoomOut,FileText,History, Copy, Share2, CheckCircle, ArrowRight, Globe, Sparkles, Bot, BookOpen, Clock, Users, AlertCircle, ExternalLink, Mail, Twitter, Youtube, } from 'lucide-react';
 
 function App() {
   const [summaryText, setSummaryText] = useState('');
@@ -26,40 +26,87 @@ function App() {
     {
       icon: <Zap className="w-6 h-6" />,
       title: 'Lightning Fast',
-      description: 'Generate summaries in seconds using advanced AI technology'
+      description: 'Generate summaries in seconds using advanced AI technology.'
     },
     {
       icon: <FileText className="w-6 h-6" />,
       title: 'Multiple Formats',
-      description: 'Choose from 6 different summary styles to match your needs'
+      description: 'Choose from 3 different summary styles to match your needs.'
     },
     {
       icon: <Globe className="w-6 h-6" />,
       title: 'Any Website',
-      description: 'Works on any webpage - articles, blogs, research papers, and more'
+      description: 'Works on any webpage - articles, blogs, research papers, and more.'
     },
     {
       icon: <Chrome className="w-6 h-6" />,
       title: 'Browser Integration',
-      description: 'Seamlessly integrated into Chrome for instant access'
+      description: 'Seamlessly integrated into Chrome for instant access.'
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: 'Smart Analysis',
-      description: 'AI understands context and extracts the most relevant information'
+      description: 'AI understands context and extracts the most relevant information.'
     },
     {
       icon: <Copy className="w-6 h-6" />,
       title: 'Easy Export',
-      description: 'Copy, share, or export summaries in multiple formats'
-    }
+      description: 'Copy, share, or export summaries in multiple formats.'
+    },
+    {
+      icon: <AudioLines  className="w-6 h-6" />,
+      title: 'Voice Control',
+      description: 'Easily control the summarization process with your voice.'
+    },
+    {
+      icon: <Share  className="w-6 h-6" />,
+      title: 'Effortless Sharing',
+      description: 'Quickly share your summaries with a single click.'
+    },
+    {
+      icon: <History  className="w-6 h-6" />,
+      title: 'Save & Delete History',
+      description: 'Manage your summary history with simple save and delete controls.'
+    },
+    {
+    icon: (
+      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-purple-500 mb-4">
+        <div className="flex gap-1">
+          <ZoomIn className="w-15 h-7 text-white" />
+          <ZoomOut className="w-15 h-7 text-white" />
+        </div>
+      </div>
+    ),
+    title: "Custom View Control",
+    description: "Adjust the view settings to your preference.",
+  },
+  {
+    icon: <Volume2  className="w-6 h-6" />,
+      title: 'Text-to-Speech',
+      description: 'Convert text summaries into natural-sounding speech.'
+  },
+  {
+    icon: <Download className="w-6 h-6" />,
+    title: 'Instant Download',
+    description: 'Download your summaries in pdf formats with a single click.'
+  },
+  {
+    icon: <Languages className="w-6 h-6" />,
+    title: 'Multi-Language Support',
+    description: 'Generate summaries in multiple (10+) languages with ease.'
+  },
+  {
+    icon: <Wallpaper className="w-6 h-6" />,
+    title: 'Theme Customization',
+    description: 'Switch between light, dark, or colorful themes for better comfort.'
+  }
   ];
 
   const stats = [
-    { number: '25K+', label: 'Active Users', icon: <Users className="w-5 h-5" /> },
+    { number: '2K+', label: 'Active Users', icon: <Users className="w-5 h-5" /> },
     { number: '150K+', label: 'Summaries Generated', icon: <FileText className="w-5 h-5" /> },
     { number: '99.5%', label: 'Accuracy Rate', icon: <CheckCircle className="w-5 h-5" /> },
-    { number: '<2s', label: 'Average Response Time', icon: <Clock className="w-5 h-5" /> }
+    { number: '<5s', label: 'Average Response Time', icon: <Clock className="w-5 h-5" /> }
   ];
 
 
@@ -488,6 +535,7 @@ function App() {
 
 
       {/* CTA Section */}
+<<<<<<< HEAD
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Reading?</h2>
@@ -517,6 +565,90 @@ function App() {
           </div>
         </div>
       </section>
+=======
+      <section className="px-6 py-20 bg-gradient-to-r from-purple-500 to-purple-600 to-black">
+  <div className="max-w-6xl mx-auto text-center">
+    {/* Heading */}
+    <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+      Ready to Transform Your Reading?
+    </h2>
+    <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+      Join thousands of users who are already saving hours of reading time with AI-powered summaries
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+      <button
+        onClick={handleInstallExtension}
+        className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
+                   text-white px-8 py-4 rounded-2xl font-semibold flex items-center space-x-2 
+                   transition-all duration-300 transform hover:scale-110 shadow-xl hover:shadow-purple-500/30"
+      >
+        <Chrome className="w-5 h-5" />
+        <span>Install Chrome Extension</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </button>
+
+      <a
+        href="https://github.com/Sangram03/Summaries_Chrome_Bot"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 
+                   text-white px-8 py-4 rounded-2xl font-semibold flex items-center space-x-2 
+                   transition-all duration-300 shadow-lg hover:shadow-white/20"
+      >
+        <Github className="w-5 h-5" />
+        <span>View on GitHub</span>
+        <ExternalLink className="w-3 h-3 text-white/60" />
+      </a>
+    </div>
+
+    {/* Screenshot Section */}
+    <div className="mt-16 flex justify-center">
+      <img
+        src="/assets/pic.png"
+        alt="AI Summary Extension Preview"
+        className="rounded-3xl shadow-2xl border border-white/20 
+                   max-w-full sm:max-w-2xl transform hover:scale-105 transition duration-500"
+      />
+    </div>
+
+    {/* YouTube Video Section */}
+    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* Video 1 */}
+      <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 p-4 bg-white/5">
+        <h3 className="text-xl font-semibold text-white mb-4">📥 How to Download It</h3>
+        <iframe
+          className="w-full aspect-video rounded-lg"
+          src="https://www.youtube.com/embed/zC4idSoEVgw"
+          title="How to Download It"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* Video 2 */}
+      <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 p-4 bg-white/5">
+        <h3 className="text-xl font-semibold text-white mb-4">⚡ How to Use It</h3>
+        <iframe
+          className="w-full aspect-video rounded-lg"
+          src="https://www.youtube.com/embed/YYYYYYYYYYY"
+          title="How to Use It"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+>>>>>>> 7bf9cda3668137551321603dc4a280c9384e3668
 
       {/* Footer */}
       <footer className="px-6 py-12 bg-black/40 border-t border-white/10">
