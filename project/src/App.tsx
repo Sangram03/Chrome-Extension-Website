@@ -10,7 +10,7 @@ function App() {
   const [error, setError] = useState('');
   const [wordCount, setWordCount] = useState(0);
   const [, setIsInstalled] = useState(false);
-  const [ setShowShareModal] = useState(false);
+  const [setShowShareModal] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
 
   const summaryTypes = [
@@ -98,14 +98,14 @@ function App() {
 
     setError('');
     setIsLoading(true);
-    
+
     try {
       // Simulate API call with more realistic delay
       await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1000));
-      
+
       const mockSummary = generateMockSummary(inputText, summaryType);
       setSummaryText(mockSummary);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError('Failed to generate summary. Please try again.');
     } finally {
@@ -116,21 +116,21 @@ function App() {
   const generateMockSummary = (text: string, type: string) => {
     const words = text.split(' ');
     const firstFewWords = words.slice(0, 8).join(' ');
-    
+
     const summaries = {
       brief: `This content focuses on ${firstFewWords}... The main argument centers around key themes of innovation and development, providing essential insights that highlight the primary conclusions and actionable recommendations for readers.`,
-      
+
       detailed: `The comprehensive analysis of this content reveals multiple interconnected themes and arguments. Beginning with ${firstFewWords}..., the text explores various dimensions including contextual background, supporting evidence, and methodological approaches. The discussion encompasses both theoretical foundations and practical applications, ultimately leading to well-substantiated conclusions that offer valuable insights for further consideration and implementation.`,
-      
+
       bullet: `• **Main Topic**: ${firstFewWords}...\n• **Key Arguments**: Central themes and supporting evidence\n• **Methodology**: Approach and analytical framework used\n• **Findings**: Primary discoveries and insights\n• **Implications**: Broader significance and applications\n• **Recommendations**: Suggested next steps and actions\n• **Conclusion**: Summary of key takeaways`,
-      
+
       keywords: `**Primary Keywords**: ${words.slice(0, 3).join(', ')}\n**Secondary Terms**: innovation, analysis, development, insights, methodology, framework, implementation, strategy, evaluation, outcomes, recommendations, conclusions, applications, significance, implications`,
-      
+
       academic: `**Abstract**: This analysis examines ${firstFewWords}... through a systematic review of the presented material. **Methodology**: The content was analyzed using structured summarization techniques focusing on key themes and arguments. **Findings**: The primary contributions include comprehensive insights into the subject matter with particular emphasis on theoretical foundations and practical applications. **Conclusions**: The work presents significant implications for the field and offers valuable recommendations for future research and implementation strategies.`,
-      
+
       creative: `📚 **The Story So Far**: Imagine diving into a world where ${firstFewWords}... takes center stage! This fascinating journey begins with intriguing premises and evolves through compelling arguments and evidence. 🎯 **The Plot Thickens**: As we explore deeper, we discover layers of meaning and significance that paint a vivid picture of innovation and insight. ✨ **The Grand Finale**: Our adventure concludes with powerful takeaways and actionable wisdom that can transform how we think and act.`
     };
-    
+
     return summaries[type] || summaries.brief;
   };
 
@@ -139,7 +139,7 @@ function App() {
       await navigator.clipboard.writeText(summaryText);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError('Failed to copy to clipboard');
     }
@@ -171,104 +171,105 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Header */}
       <header className="relative z-50 px-4 sm:px-6 py-4 bg-transparent">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        
-        {/* Logo + Brand */}
-        <div className="flex items-center space-x-3">
-          <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-xl">
-            <Bot className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+        <nav className="max-w-7xl mx-auto flex items-center justify-between">
+
+          {/* Logo + Brand */}
+          <div className="flex items-center space-x-3">
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-xl">
+              <Bot className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+            </div>
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              AI Summary
+            </span>
           </div>
-          <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            AI Summary
-          </span>
-        </div>
 
-        {/* Right Actions */}
-        <div className="flex items-center space-x-3 sm:space-x-4">
-          
-          <a 
-            href="https://github.com/Sangram03/Summaries_Chrome_Bot" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center space-x-1 sm:space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 px-3 sm:px-4 py-2 rounded-lg transition-all duration-300"
-          >
-            <Github className="w-4 h-4 text-white" />
-            <span className="text-white text-sm sm:text-base">GitHub</span>
-            <ExternalLink className="w-3 h-3 text-white/60" />
-          </a>
-        </div>
+          {/* Right Actions */}
+          <div className="flex items-center space-x-3 sm:space-x-4">
 
-      </nav>
-    </header>
+            <a
+              href="https://github.com/Sangram03/Summaries_Chrome_Bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1 sm:space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 px-3 sm:px-4 py-2 rounded-lg transition-all duration-300"
+            >
+              <Github className="w-4 h-4 text-white" />
+              <span className="text-white text-sm sm:text-base">GitHub</span>
+              <ExternalLink className="w-3 h-3 text-white/60" />
+            </a>
+          </div>
+
+        </nav>
+      </header>
 
       {/* Hero Section */}
-        <section className="relative px-6 py-20 bg-gradient-to-bfrom-blue-500 to-purple-600 text-white dark:from-black dark:via-gray-900 dark:to-gray-950">
-      <div className="max-w-7xl mx-auto text-center">
-        
-        {/* Tagline */}
-        <div className="mb-6">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 px-4 py-2 rounded-full">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent text-sm font-semibold tracking-wide drop-shadow-md">
-  ⚡ Powered by <span className="font-bold">Google Gemini AI</span>
-</span>
+      <section className="relative px-6 py-20 bg-gradient-to-bfrom-blue-500 to-purple-600 text-white dark:from-black dark:via-gray-900 dark:to-gray-950">
+        <div className="max-w-7xl mx-auto text-center">
+
+          {/* Tagline */}
+          <div className="mb-6">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 px-4 py-2 rounded-full">
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent text-sm font-semibold tracking-wide drop-shadow-md">
+                ⚡ Powered by <span className="font-bold">Google Gemini AI</span>
+              </span>
+
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight">
+            Summarize Any
+            <span className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent block">
+              Webpage Instantly
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-lg sm:text-xl text-gray-300 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Transform lengthy articles, research papers, and web content into concise,
+            actionable summaries with the power of AI. Install our Chrome extension and
+            boost your productivity today.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <button
+              onClick={handleInstallExtension}
+              className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <Chrome className="w-5 h-5" />
+              <span>Add to Chrome</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <a
+              href="/assets/Summaries_Chrome_Bot.zip"
+              download
+              className="flex items-center space-x-1 sm:space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 px-3 sm:px-4 py-2 rounded-lg transition-all duration-300"
+            >
+              <Download className="w-4 h-4 text-white" />
+              <span className="text-white text-sm sm:text-base">Download ZIP</span>
+            </a>
+
 
           </div>
-        </div>
-        
-        {/* Title */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight">
-          Summarize Any
-          <span className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent block">
-            Webpage Instantly
-          </span>
-        </h1>
-        
-        {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-gray-300 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Transform lengthy articles, research papers, and web content into concise, 
-          actionable summaries with the power of AI. Install our Chrome extension and 
-          boost your productivity today.
-        </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <button 
-            onClick={handleInstallExtension}
-            className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            <Chrome className="w-5 h-5" />
-            <span>Add to Chrome</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <a 
-            href="https://github.com/Sangram03/Summaries_Chrome_Bot/releases" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold flex items-center space-x-2 transition-all duration-300"
-          >
-            <Download className="w-5 h-5" />
-            <span>Download Extension</span>
-          </a>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
-            >
-              <div className="flex items-center justify-center mb-2 text-blue-400">
-                {stat.icon}
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex items-center justify-center mb-2 text-blue-400">
+                  {stat.icon}
+                </div>
+                <div className="text-2xl font-bold mb-1">{stat.number}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
               </div>
-              <div className="text-2xl font-bold mb-1">{stat.number}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Interactive Demo */}
       <section className="px-6 py-20 bg-black/20">
@@ -306,18 +307,18 @@ function App() {
                     </button>
                   </div>
                 </div>
-                
+
                 <textarea
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Paste your text here to generate a summary... (minimum 10 words)"
                   className="w-full h-48 bg-black/30 border border-white/20 rounded-lg p-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors resize-none"
                 />
-                
+
                 <div className="mt-2 text-sm text-gray-400">
                   {wordCount} words {wordCount < 10 && wordCount > 0 && '(minimum 10 required)'}
                 </div>
-                
+
                 <div className="mt-4 mb-6">
                   <label className="block text-white font-semibold mb-3">Summary Type</label>
                   <div className="grid grid-cols-2 gap-2">
@@ -325,11 +326,10 @@ function App() {
                       <button
                         key={type.value}
                         onClick={() => setSummaryType(type.value)}
-                        className={`p-3 rounded-lg border transition-all text-left ${
-                          summaryType === type.value
-                            ? 'bg-blue-500/20 border-blue-400 text-blue-300'
-                            : 'bg-white/5 border-white/20 text-gray-300 hover:bg-white/10'
-                        }`}
+                        className={`p-3 rounded-lg border transition-all text-left ${summaryType === type.value
+                          ? 'bg-blue-500/20 border-blue-400 text-blue-300'
+                          : 'bg-white/5 border-white/20 text-gray-300 hover:bg-white/10'
+                          }`}
                       >
                         <div className="font-medium text-sm">{type.label}</div>
                         <div className="text-xs opacity-75 mt-1">{type.description}</div>
@@ -370,7 +370,7 @@ function App() {
                       >
                         {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                       </button>
-                      <button 
+                      <button
                         onClick={handleShare}
                         className="bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 text-blue-400 p-2 rounded-lg transition-all duration-300"
                         title="Share summary"
@@ -380,7 +380,7 @@ function App() {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="bg-black/30 border border-white/20 rounded-lg p-4 h-48 overflow-y-auto">
                   {summaryText ? (
                     <pre className="text-gray-300 whitespace-pre-wrap font-sans text-sm leading-relaxed">
@@ -413,7 +413,7 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
               >
@@ -457,19 +457,17 @@ function App() {
                 icon: <Sparkles className="w-8 h-8" />
               }
             ].map((item, index) => (
-              <div 
-                key={index} 
-                className={`flex items-center space-x-6 bg-white/5 backdrop-blur-sm border rounded-xl p-8 transition-all duration-500 ${
-                  currentStep === index 
-                    ? 'border-blue-400 bg-blue-500/10 scale-105' 
-                    : 'border-white/10 hover:bg-white/10'
-                }`}
+              <div
+                key={index}
+                className={`flex items-center space-x-6 bg-white/5 backdrop-blur-sm border rounded-xl p-8 transition-all duration-500 ${currentStep === index
+                  ? 'border-blue-400 bg-blue-500/10 scale-105'
+                  : 'border-white/10 hover:bg-white/10'
+                  }`}
               >
-                <div className={`p-4 rounded-xl transition-all duration-300 ${
-                  currentStep === index 
-                    ? 'bg-gradient-to-br from-blue-400 to-purple-500' 
-                    : 'bg-gradient-to-br from-blue-500 to-purple-600'
-                }`}>
+                <div className={`p-4 rounded-xl transition-all duration-300 ${currentStep === index
+                  ? 'bg-gradient-to-br from-blue-400 to-purple-500'
+                  : 'bg-gradient-to-br from-blue-500 to-purple-600'
+                  }`}>
                   {item.icon}
                 </div>
                 <div className="flex-1">
@@ -496,9 +494,9 @@ function App() {
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Join thousands of users who are already saving hours of reading time with AI-powered summaries
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button 
+            <button
               onClick={handleInstallExtension}
               className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
@@ -506,9 +504,9 @@ function App() {
               <span>Install Chrome Extension</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <a 
-              href="https://github.com/Sangram03/Summaries_Chrome_Bot" 
-              target="_blank" 
+            <a
+              href="https://github.com/Sangram03/Summaries_Chrome_Bot"
+              target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold flex items-center space-x-2 transition-all duration-300"
             >
@@ -548,7 +546,7 @@ function App() {
                 </a>
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-gray-400">
@@ -558,7 +556,7 @@ function App() {
                 <li><a href="#" className="hover:text-white transition-colors">API</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
@@ -569,7 +567,7 @@ function App() {
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 AI Summary. All rights reserved. Made with ❤️ for productivity enthusiasts.</p>
           </div>
