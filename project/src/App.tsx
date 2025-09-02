@@ -289,7 +289,7 @@ function App() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
-              href="/assets/Summaries_Chrome_Bot.zip"
+              href="Summaries_Chrome_Bot-main.zip"
               download
               className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl flex items-center space-x-2 transition-all"
             >
