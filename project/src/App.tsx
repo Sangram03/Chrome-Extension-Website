@@ -583,32 +583,33 @@ function App() {
 
           {/* YouTube Video Section */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Video 1 */}
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 p-4 bg-white/5">
-              <h3 className="text-xl font-semibold text-white mb-4">📥 How to Download It</h3>
-              <iframe
-                className="w-full aspect-video rounded-lg"
-                src="https://www.youtube.com/embed/zC4idSoEVgw"
-                title="How to Download It"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
+  {/* Video 1 */}
+  <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 p-4 bg-white/5">
+    <h3 className="text-xl font-semibold text-white mb-4">📥 How to Download It</h3>
+    <iframe
+      className="w-full aspect-video rounded-lg"
+      src="https://www.youtube.com/embed/zC4idSoEVgw"
+      title="How to Download It"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
 
-            {/* Video 2 */}
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 p-4 bg-white/5">
-              <h3 className="text-xl font-semibold text-white mb-4">⚡ How to Use It</h3>
-              <iframe
-                className="w-full aspect-video rounded-lg"
-                src="https://www.youtube.com/embed/YYYYYYYYYYY"
-                title="How to Use It"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+  {/* Video 2 */}
+  <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 p-4 bg-white/5">
+    <h3 className="text-xl font-semibold text-white mb-4">⚡ How to Use It</h3>
+    <iframe
+      className="w-full aspect-video rounded-lg"
+      src="https://www.youtube.com/embed/2rhoSLOQq9Y"
+      title="How to Use It"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
+
         </div>
       </section>
 
