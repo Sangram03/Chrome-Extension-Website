@@ -57,7 +57,10 @@ const FeaturesSection = () => {
   return (
     <>
       {/* Features Section */}
-      <section id="features" className="px-6 py-20">
+      <section id="features" className="px-6 py-20"
+      style={{
+    background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+   }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Powerful Features</h2>
@@ -84,7 +87,10 @@ const FeaturesSection = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="px-6 py-20 bg-black/20">
+      <section className="px-6 py-20 bg-black/20"
+      style={{
+    background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+   }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">How It Works</h2>

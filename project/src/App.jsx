@@ -13,7 +13,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen "
+    style={{
+    background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+   }}>
       <Header onInstallExtension={handleInstallExtension} />
       <HeroSection onInstallExtension={handleInstallExtension} />
       <InteractiveDemo />

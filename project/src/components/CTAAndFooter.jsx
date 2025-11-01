@@ -12,7 +12,10 @@ import {
 const CTAAndFooter = ({ onInstallExtension }) => {
   return (
     <>
-      <section className="px-6 py-20 bg-gradient-to-r from-purple-500 to-purple-600">
+      <section className="px-6 py-20 "
+      style={{
+    background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+   }}>
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
             Ready to Transform Your Reading?
@@ -84,7 +87,10 @@ const CTAAndFooter = ({ onInstallExtension }) => {
         </div>
       </section>
 
-      <footer className="px-6 py-12 bg-black/40 border-t border-white/10">
+      <footer className="px-6 py-12 bg-black/40 border-t border-white/10"
+      style={{
+    background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+   }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             {/* Brand Section */}

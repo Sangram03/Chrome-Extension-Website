@@ -19,7 +19,10 @@ const HeroSection = ({ onInstallExtension }) => {
   ];
 
   return (
-    <section className="relative px-6 py-20 bg-gradient-to-b from-blue-500 to-purple-600 text-white dark:from-black dark:via-gray-900 dark:to-gray-950">
+    <section className="relative px-6 py-20  text-white dark:from-black dark:via-gray-900 dark:to-gray-950"
+     style={{
+    background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+   }}>
       <div className="max-w-7xl mx-auto text-center">
         {/* Badge */}
         <div className="mb-6">

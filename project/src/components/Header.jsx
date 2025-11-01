@@ -4,7 +4,8 @@ import { Github, Bot, ExternalLink } from 'lucide-react';
 // Component 1: Header
 const Header = ({ onInstallExtension }) => {
   return (
-    <header className="relative z-50 px-4 sm:px-6 py-4 bg-transparent">
+    <header className="relative z-50 px-4 sm:px-6 py-4 bg-transparent"
+    >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-xl">
