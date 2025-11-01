@@ -1,86 +1,116 @@
-import React from 'react';
+import React from "react";
 import {
   Chrome,
   Download,
-  Sparkles,
-  Users,
+  Youtube,
+  Brain,
+  Volume2,
+  Languages,
+  Cloud,
   FileText,
-  CheckCircle,
-  Clock,
-  ArrowRight,
-} from 'lucide-react';
+} from "lucide-react";
 
-const HeroSection = ({ onInstallExtension }) => {
-  const stats = [
-    { number: '2K+', label: 'Active Users', icon: <Users className="w-5 h-5" /> },
-    { number: '150K+', label: 'Summaries Generated', icon: <FileText className="w-5 h-5" /> },
-    { number: '99.5%', label: 'Accuracy Rate', icon: <CheckCircle className="w-5 h-5" /> },
-    { number: '<5s', label: 'Average Response Time', icon: <Clock className="w-5 h-5" /> },
-  ];
-
+const HeroSection = () => {
   return (
-    <section className="relative px-6 py-20 bg-gradient-to-b from-blue-500 to-purple-600 text-white dark:from-black dark:via-gray-900 dark:to-gray-950">
-      <div className="max-w-7xl mx-auto text-center">
-        {/* Badge */}
-        <div className="mb-6">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 px-4 py-2 rounded-full">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent text-sm font-semibold tracking-wide drop-shadow-md">
-              ⚡ Powered by <span className="font-bold">Google Gemini AI</span>
-            </span>
-          </div>
-        </div>
+    <section className="relative bg-gradient-to-b from-blue-500 to-purple-600 text-white py-24 text-center overflow-hidden">
+      <div className="container mx-auto px-6">
+        {/* Header Text */}
+        <h2 className="text-sm md:text-base font-medium text-white/80 mb-2">
+          ⚡ Powered by Google Gemini AI
+        </h2>
 
-        {/* Title */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight">
-          Summarize Any
-          <span className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent block">
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+          Summarize Any <br />
+          <span className="bg-gradient-to-r from-blue-200 via-pink-200 to-purple-300 bg-clip-text text-transparent">
             Webpage Instantly
           </span>
         </h1>
 
-        {/* Description */}
-        <p className="text-lg sm:text-xl text-gray-300 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="max-w-2xl mx-auto text-base md:text-lg text-white/90 mb-10">
           Transform lengthy articles, research papers, and web content into concise,
-          actionable summaries with the power of AI. Install our Chrome extension and
-          boost your productivity today.
+          actionable summaries with the power of AI. Install our Chrome extension
+          and boost your productivity today.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
           <button
-            onClick={onInstallExtension}
-            className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            onClick={() =>
+              window.open("https://chrome.google.com/webstore", "_blank")
+            }
+            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 px-6 py-3 rounded-xl text-lg font-medium flex items-center justify-center gap-2 shadow-md"
           >
             <Chrome className="w-5 h-5" />
-            <span>Add to Chrome</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Add to Chrome →
           </button>
 
-          <a
-            href="/assets/Summaries_Chrome_Bot-main.zip"
-            download
-            className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl flex items-center space-x-2 transition-all"
+          <button
+            onClick={() =>
+              window.open(
+                "https://github.com/LegendLogic/Summaries_Chrome_Bot/archive/refs/heads/main.zip",
+                "_blank"
+              )
+            }
+            className="bg-white/10 hover:bg-white/20 border border-white/30 px-6 py-3 rounded-xl text-lg font-medium flex items-center justify-center gap-2"
           >
-            <Download className="w-4 h-4" />
-            <span>Download ZIP</span>
-          </a>
+            <Download className="w-5 h-5" />
+            Download ZIP
+          </button>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
-            >
-              <div className="flex items-center justify-center mb-2 text-blue-400">
-                {stat.icon}
-              </div>
-              <div className="text-2xl font-bold mb-1">{stat.number}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
+        {/* === Feature Highlights === */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-5xl mx-auto text-white/90">
+          {/* New: Article Summarizer */}
+          <div className="flex flex-col items-center">
+            <FileText className="w-8 h-8 mb-2 text-pink-200" />
+            <span className="text-sm font-medium">Article Summarizer</span>
+          </div>
+
+          {/* Existing Features */}
+          <div className="flex flex-col items-center">
+            <Youtube className="w-8 h-8 mb-2 text-red-300" />
+            <span className="text-sm font-medium">YouTube Summarizer</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Brain className="w-8 h-8 mb-2 text-indigo-200" />
+            <span className="text-sm font-medium">Auto Detect (Article/Video)</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Volume2 className="w-8 h-8 mb-2 text-green-200" />
+            <span className="text-sm font-medium">Voice Summary</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Languages className="w-8 h-8 mb-2 text-yellow-200" />
+            <span className="text-sm font-medium">Multi-Language</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Cloud className="w-8 h-8 mb-2 text-blue-200" />
+            <span className="text-sm font-medium">Cloud Save</span>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto text-white/90">
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+            <h3 className="text-2xl font-bold">2K+</h3>
+            <p className="text-sm text-white/70">Active Users</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+            <h3 className="text-2xl font-bold">150K+</h3>
+            <p className="text-sm text-white/70">Summaries Generated</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+            <h3 className="text-2xl font-bold">99.5%</h3>
+            <p className="text-sm text-white/70">Accuracy Rate</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+            <h3 className="text-2xl font-bold">&lt;5s</h3>
+            <p className="text-sm text-white/70">Average Response Time</p>
+          </div>
         </div>
       </div>
     </section>
