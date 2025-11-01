@@ -14,18 +14,25 @@ import {
   Languages,
   Wallpaper,
   Sparkles,
-  ArrowRight,
   Github,
-  ExternalLink,
+  Cloud,
+  Youtube,
+  Brain,
   Bot,
-  Mail,
-  Twitter,
 } from 'lucide-react';
 
 const FeaturesSection = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const features = [
+    // --- New Chrome Bot features ---
+    { icon: <Youtube />, title: 'YouTube Video Summarizer', description: 'Instantly summarize YouTube videos into key bullet points directly from the video page.' },
+    { icon: <Brain />, title: 'Auto Detect Article or Video', description: 'Automatically detects whether you’re on an article or a video and summarizes accordingly.' },
+    { icon: <Volume2 />, title: 'Voice Summary', description: 'Listen to your summaries in a natural voice for hands-free convenience.' },
+    { icon: <Languages />, title: 'Multi-Language Summaries', description: 'Supports multiple global languages for better accessibility.' },
+    { icon: <Cloud />, title: 'Cloud Save', description: 'Securely save your summaries in the cloud and access them anytime.' },
+
+    // --- Original features ---
     { icon: <Zap />, title: 'Lightning Fast', description: 'Generate summaries in seconds using advanced AI technology.' },
     { icon: <FileText />, title: 'Multiple Formats', description: 'Choose from 3 different summary styles to match your needs.' },
     { icon: <Globe />, title: 'Any Website', description: 'Works on any webpage - articles, blogs, research papers, and more.' },
@@ -41,18 +48,52 @@ const FeaturesSection = () => {
     { icon: <Wallpaper />, title: 'Theme Customization', description: 'Switch between light, dark, or colorful themes for better comfort.' },
   ];
 
+  // 🧭 Full Step-by-Step Workflow
   const steps = [
-    { step: '01', title: 'Install Extension', description: 'Add AI Summary to your Chrome browser with just one click from the Chrome Web Store.', icon: <Download className="w-8 h-8" /> },
-    { step: '02', title: 'Select Content', description: 'Navigate to any webpage and click the AI Summary extension icon in your toolbar.', icon: <Globe className="w-8 h-8" /> },
-    { step: '03', title: 'Get Summary', description: 'Choose your preferred summary type and let our AI generate instant, accurate summaries.', icon: <Sparkles className="w-8 h-8" /> },
+    {
+      step: '01',
+      title: 'Install Extension',
+      description:
+        'Add AI Summary to your Chrome browser with just one click from the Chrome Web Store.',
+      icon: <Download className="w-8 h-8" />,
+    },
+    {
+      step: '02',
+      title: 'Select Content',
+      description:
+        'Navigate to any webpage or YouTube video and click the AI Summary extension icon in your toolbar.',
+      icon: <Globe className="w-8 h-8" />,
+    },
+    {
+      step: '03',
+      title: 'Get Summary',
+      description:
+        'Choose your preferred summary type and let our AI generate instant, accurate summaries.',
+      icon: <Sparkles className="w-8 h-8" />,
+    },
+    {
+      step: '04',
+      title: 'Customize & Save',
+      description:
+        'Refine your summary, adjust tone or language, and save it to the cloud or download it instantly.',
+      icon: <Cloud className="w-8 h-8" />,
+    },
+    {
+      step: '05',
+      title: 'Listen or Translate',
+      description:
+        'Play your summary using a natural AI voice or instantly translate it into your preferred language.',
+      icon: <Volume2 className="w-8 h-8" />,
+    },
   ];
 
+  // 🔄 Auto-cycle highlight animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentStep((prev) => (prev + 1) % 3);
+      setCurrentStep((prev) => (prev + 1) % steps.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [steps.length]);
 
   return (
     <>
@@ -85,10 +126,10 @@ const FeaturesSection = () => {
 
       {/* How It Works Section */}
       <section className="px-6 py-20 bg-black/20">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">How It Works</h2>
-            <p className="text-gray-300 text-lg">Get started in just 3 simple steps</p>
+            <p className="text-gray-300 text-lg">Your journey from installation to productivity</p>
           </div>
 
           <div className="space-y-8">
@@ -97,7 +138,7 @@ const FeaturesSection = () => {
                 key={index}
                 className={`flex items-center space-x-6 bg-white/5 backdrop-blur-sm border rounded-xl p-8 transition-all duration-500 ${
                   currentStep === index
-                    ? 'border-blue-400 bg-blue-500/10 scale-105'
+                    ? 'border-blue-400 bg-blue-500/10 scale-[1.03]'
                     : 'border-white/10 hover:bg-white/10'
                 }`}
               >
@@ -128,6 +169,4 @@ const FeaturesSection = () => {
   );
 };
 
-
-
-export default  FeaturesSection ;
+export default FeaturesSection;
