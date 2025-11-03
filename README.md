@@ -1,4 +1,4 @@
-# 🤖 Summary.io – AI-Powered Web Summarizer
+# 🤖 Summary.io – AI-Powered Website for Chrome Extension 
 
 <p align="center">
 
