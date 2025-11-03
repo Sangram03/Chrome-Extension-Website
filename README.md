@@ -71,15 +71,6 @@ git clone https://github.com/Sangram03/Summary.io.git
 cd Summary.io
 ```
 
-1. Open **Google Chrome**
-2. Navigate to `chrome://extensions/`
-3. Enable **Developer Mode**
-4. Click **Load unpacked**
-5. Select the `Summary.io/` folder
-
-🎉 Done! Your extension is now ready to use.
-
----
 
 ## ⚙️ Tech Stack
 
